@@ -10,7 +10,7 @@ module.exports = {
     port: 3002,
   },
   output: {
-    publicPath: process.env.NODE_ENV === "production" ? "/remote2/" : "auto",
+    publicPath: "auto", // Docker 컨테이너에서는 항상 auto 사용
   },
   resolve: {
     extensions: [".ts", ".tsx", ".js"],

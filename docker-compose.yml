@@ -15,16 +15,68 @@ services:
       - microfrontend-network
     restart: unless-stopped
 
-  # Nginx (정적 파일 서빙 + 프록시)
-  nginx:
+  # Shell App (Main Host)
+  shell:
+    build:
+      context: .
+      dockerfile: ./apps/shell/Dockerfile
+    container_name: shell-app
+    ports:
+      - "3000:80"
+    networks:
+      - microfrontend-network
+    restart: unless-stopped
+
+  # Remote1 Micro App
+  remote1:
+    build:
+      context: .
+      dockerfile: ./apps/remote1/Dockerfile
+    container_name: remote1-app
+    ports:
+      - "3001:80"
+    networks:
+      - microfrontend-network
+    restart: unless-stopped
+
+  # Remote2 Micro App
+  remote2:
+    build:
+      context: .
+      dockerfile: ./apps/remote2/Dockerfile
+    container_name: remote2-app
+    ports:
+      - "3002:80"
+    networks:
+      - microfrontend-network
+    restart: unless-stopped
+
+  # Auth Frontend App
+  auth-frontend:
+    build:
+      context: .
+      dockerfile: ./apps/auth-frontend/Dockerfile
+    container_name: auth-frontend-app
+    ports:
+      - "3004:80"
+    networks:
+      - microfrontend-network
+    restart: unless-stopped
+
+  # Main Nginx (프록시 전용)
+  nginx-proxy:
     build:
       context: .
       dockerfile: Dockerfile.nginx
-    container_name: nginx-microfrontend
+    container_name: nginx-proxy
     ports:
       - "80:80"
     depends_on:
       - auth-server
+      - shell
+      - remote1
+      - remote2
+      - auth-frontend
     networks:
       - microfrontend-network
     restart: unless-stopped
