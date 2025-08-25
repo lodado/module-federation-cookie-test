@@ -1,0 +1,34 @@
+version: "3.8"
+
+services:
+  # Auth Server (Next.js API)
+  auth-server:
+    build:
+      context: ./apps/auth-server
+      dockerfile: Dockerfile
+    container_name: auth-server
+    ports:
+      - "3003:3003"
+    environment:
+      - NODE_ENV=production
+    networks:
+      - microfrontend-network
+    restart: unless-stopped
+
+  # Nginx (정적 파일 서빙 + 프록시)
+  nginx:
+    build:
+      context: .
+      dockerfile: Dockerfile.nginx
+    container_name: nginx-microfrontend
+    ports:
+      - "80:80"
+    depends_on:
+      - auth-server
+    networks:
+      - microfrontend-network
+    restart: unless-stopped
+
+networks:
+  microfrontend-network:
+    driver: bridge

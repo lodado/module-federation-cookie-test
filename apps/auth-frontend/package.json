@@ -1,0 +1,10 @@
+{
+  "name": "auth-frontend",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "webpack serve --config webpack.config.js --port 3004",
+    "build": "webpack --config webpack.config.js",
+    "test": "echo 'no tests'"
+  }
+}
