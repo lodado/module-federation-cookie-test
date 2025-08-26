@@ -338,16 +338,6 @@ auth.yourdomain.com     A    192.168.1.103
 api.yourdomain.com      A    192.168.1.104
 ```
 
-#### **CNAME 설정 (같은 서버, 다른 포트)**
-
-```dns
-app.yourdomain.com      CNAME  main.yourdomain.com
-remote1.yourdomain.com  CNAME  main.yourdomain.com
-remote2.yourdomain.com  CNAME  main.yourdomain.com
-auth.yourdomain.com     CNAME  main.yourdomain.com
-api.yourdomain.com      CNAME  main.yourdomain.com
-```
-
 ### 🚀 **배포 권장사항**
 
 #### **개발/스테이징 환경**
