@@ -5,6 +5,8 @@
 /.pnp
 .pnp.js
 
+
+
 .next
 
 # testing
@@ -14,6 +16,8 @@
 /build
 **/dist/
 **/build/
+
+**/node_modules
 
 # webpack bundles
 *.bundle.js
