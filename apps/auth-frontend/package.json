@@ -3,8 +3,12 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "dev": "webpack serve --config webpack.config.js --port 3004",
-    "build": "webpack --config webpack.config.js",
-    "test": "echo 'no tests'"
+    "dev": "BROWSER=none craco start --port 3004",
+    "build": "craco build",
+    "test": "craco test"
+  },
+  "dependencies": {
+    "@craco/craco": "^7.1.0",
+    "react-scripts": "5.0.1"
   }
 }
