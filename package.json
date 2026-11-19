@@ -48,7 +48,7 @@
     "@module-federation/enhanced": "^0.18.3",
     "html-webpack-plugin": "^5.6.0",
     "ts-loader": "^9.5.1",
-    "turbo": "^1.10.12",
+    "turbo": "^2.11.11",
     "webpack": "^5.91.0",
     "webpack-cli": "^5.1.4",
     "webpack-dev-server": "^4.15.1"
