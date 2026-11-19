@@ -6,9 +6,9 @@
     "apps/*"
   ],
   "dependencies": {
-    "@testing-library/dom": "^10.4.0",
+    "@testing-library/dom": "^10.4.2",
     "@testing-library/jest-dom": "^6.6.3",
-    "@testing-library/react": "^16.3.0",
+    "@testing-library/react": "^16.3.3",
     "@testing-library/user-event": "^13.5.0",
     "@types/jest": "^27.5.2",
     "@types/node": "^16.18.126",
@@ -46,10 +46,10 @@
   "devDependencies": {
     "@craco/craco": "^7.1.0",
     "@module-federation/enhanced": "^0.18.3",
-    "html-webpack-plugin": "^5.6.0",
-    "ts-loader": "^9.5.1",
+    "html-webpack-plugin": "^5.6.8",
+    "ts-loader": "^9.6.2",
     "turbo": "^1.10.12",
-    "webpack": "^5.91.0",
+    "webpack": "^5.112.2",
     "webpack-cli": "^5.1.4",
     "webpack-dev-server": "^4.15.1"
   }
